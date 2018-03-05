@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   #     resources :requests, only: [:new, :create]
   #     resources :invitations, only: [:new, :create]
   resources :events, only: [:new, :create, :show]
+  get '/users', to: 'users#index'
 
 
 
