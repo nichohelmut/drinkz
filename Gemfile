@@ -15,6 +15,8 @@ gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
+gem 'devise'
+
 
 
 group :development do
