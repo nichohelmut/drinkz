@@ -4,6 +4,12 @@ class UsersController < ApplicationController
    @users = policy_scope(User).order(created_at: :desc)
  end
 
+ def show
+  @user = User.find(params[:id])
+  authorize @user
+
+end
+
  def new
   @user = User.new
   authorize @user
@@ -18,6 +24,8 @@ def create
     :new
   end
 end
+
+
 
 private
 

@@ -6,8 +6,9 @@ Rails.application.routes.draw do
   #   resources :events, only: [:index, :show, :new, :create] do
   #     resources :requests, only: [:new, :create]
   #     resources :invitations, only: [:new, :create]
-  resources :events, only: [:new, :create, :show]
+  resources :events, only: [:index, :new, :create, :show]
   get '/users', to: 'users#index'
+  get '/users/:id', to: 'users#show'
 
 
 
