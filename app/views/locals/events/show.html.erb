@@ -1,0 +1,11 @@
+<h1> <%= @event.location_name %> </h1>
+<h2> <%= @event.location_address %> </h2>
+<h2> <%= @event.time.strftime("%H:%M") %> </h2>
+<h3> <%= @event.event_description %></h3>
+
+<h3>Who is comming:</h3>
+<h2> Organizer: <%= link_to @event.user.first_name, locals_user_path(@event.user, event_id: @event.id) %></h2>
+
+<%# link_to "Confirm", locals_user_path() %>
+
+

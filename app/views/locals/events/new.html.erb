@@ -1,4 +1,4 @@
-<%= simple_form_for @event do |f| %>
+<%= simple_form_for @event, url: locals_events_path do |f| %>
 <%= f.input :event_description %>
 <%= f.input :location_name %>
 <%= f.input :location_address %>

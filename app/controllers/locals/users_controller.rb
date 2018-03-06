@@ -1,10 +1,11 @@
-class UsersController < ApplicationController
+class Locals::UsersController < ApplicationController
 
   def index
    @users = policy_scope(User).order(created_at: :desc)
  end
 
  def show
+  # raise
   @user = User.find(params[:id])
   authorize @user
 
@@ -30,7 +31,7 @@ end
 private
 
 def user_params
-  params.require(:user).permit([:first_name, :last_name, :age, :email])
+  params.require(:user).permit([:first_name, :last_name, :age, :email, :dedication, :stay, :description, :typeofmusic])
 
 end
 end
