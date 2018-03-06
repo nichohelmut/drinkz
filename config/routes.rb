@@ -9,15 +9,17 @@ Rails.application.routes.draw do
   # resources :events, only: [:index, :new, :create, :show]
 
   namespace :locals do
-    resources :events, only: [:index, :show, :new, :create]
     resources :users, only: [:index, :show, :new, :create]
-    resources :requests, only: [:index, :show, :delete]
+    resources :events, only: [:index, :show, :new, :create] do
+      resources :requests
+    end
   end
 
   namespace :visitors do
-    resources :events, only: [:index, :show, :new, :create]
     resources :users, only: [:index, :show, :new, :create]
-    resources :requests
+    resources :events, only: [:index, :show, :new, :create] do
+      resources :requests
+    end
   end
 
 

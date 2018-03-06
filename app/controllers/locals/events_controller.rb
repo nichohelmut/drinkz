@@ -12,6 +12,7 @@ class Locals::EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
+    @event.user = current_user
     authorize @event
   end
 

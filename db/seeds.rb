@@ -28,10 +28,10 @@ User.create(first_name: "Tim", last_name: "what", age: 25, email: "nicholas5@gma
 
 ", typeofmusic: "rock")
 
-Event.create!(location_name: "Kater", location_address: "berlin", time: Time.now, event_description:"very nice")
-Event.create!(location_name: "bier", location_address: "bonn", time: Time.now, event_description:"not nice")
-Event.create!(location_name: "haus", location_address: "miami", time: Time.now, event_description:"sick nice")
-Event.create!(location_name: "gut", location_address: "muc", time: Time.now, event_description:"very ok")
-Event.create!(location_name: "nice", location_address: "ham", time: Time.now, event_description:"hhöäh nice")
+Event.create!(user_id: User.all.sample.id, location_name: "Kater", location_address: "berlin", time: Time.now, event_description:"very nice")
+Event.create!(user_id: User.all.sample.id,location_name: "bier", location_address: "bonn", time: Time.now, event_description:"not nice")
+Event.create!(user_id: User.all.sample.id,location_name: "haus", location_address: "miami", time: Time.now, event_description:"sick nice")
+Event.create!(user_id: User.all.sample.id,location_name: "gut", location_address: "muc", time: Time.now, event_description:"very ok")
+Event.create!(user_id: User.all.sample.id,location_name: "nice", location_address: "ham", time: Time.now, event_description:"hhöäh nice")
 
 

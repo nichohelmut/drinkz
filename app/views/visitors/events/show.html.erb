@@ -3,7 +3,10 @@
 <h2> <%= @event.time.strftime("%H:%M") %> </h2>
 <h3> <%= @event.event_description %></h3>
 
-<%= link_to "Join Request", locals_users_path %>
+<h3>Who is comming:</h3>
+<h2> Organizer: <%= link_to @event.user.first_name, locals_user_path(id: @event.user.id, event_id: @event.id) %></h2>
+
+<p>Join request button --> send to chat</p>
 <%= link_to "Continue Looking", visitors_events_path %>
 
 
