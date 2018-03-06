@@ -3,6 +3,7 @@
 <h2> <%= @event.time.strftime("%H:%M") %> </h2>
 <h3> <%= @event.event_description %></h3>
 
-<%= link_to "Confirm", users_path %>
+<%= link_to "Join Request", locals_users_path %>
+<%= link_to "Continue Looking", visitors_events_path %>
 
 

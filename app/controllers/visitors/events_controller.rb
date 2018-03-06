@@ -1,4 +1,9 @@
-class EventsController < ApplicationController
+# module Locals
+#   class EventsController
+#   end
+# end
+
+class Visitors::EventsController < ApplicationController
 
   def index
     @events = policy_scope(Event).order(created_at: :desc)
@@ -21,10 +26,10 @@ class EventsController < ApplicationController
     authorize @event
     @event.user = current_user
     if @event.save
-      redirect_to event_path(@event)
-    else
-      :new
-    end
+      redirect_to locals_event_path(@event)
+     else
+       :new
+     end
 
   end
 
