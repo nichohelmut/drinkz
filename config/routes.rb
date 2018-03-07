@@ -9,19 +9,29 @@ Rails.application.routes.draw do
   # resources :events, only: [:index, :new, :create, :show]
 
   namespace :locals do
-    resources :users, only: [:index, :show, :new, :create]
+    # end
+    resources :requests, only: :show do
+      resources :messages, only: [:index, :new, :create]
+    end
+
+    # /requests/345/messages/new
+
     resources :events, only: [:index, :show, :new, :create] do
-      resources :requests
+      resources :users, only: [:index, :show]
+      resources :requests, only: [:new, :create]
     end
   end
+
+
 
   namespace :visitors do
     resources :users, only: [:index, :show, :new, :create]
     resources :events, only: [:index, :show, :new, :create] do
       resources :requests
     end
-  end
 
+  end
+end
 
 
   # resources :users
@@ -30,4 +40,4 @@ Rails.application.routes.draw do
 
 
 
-end
+

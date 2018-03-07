@@ -10,7 +10,8 @@ class EventPolicy < ApplicationPolicy
   end
 
   def show?
-    user.admin? || record.user == user
+    true
+    # user.admin? || record.user == user
   end
 
   def create?

@@ -2,7 +2,7 @@ class Locals::UsersController < ApplicationController
 
   def index
    @users = policy_scope(User).order(created_at: :desc)
-
+   @event = Event.find(params[:event_id])
     @users = User.where.not(latitude: nil, longitude: nil)
 
     @markers = @users.map do |user|
@@ -16,7 +16,9 @@ class Locals::UsersController < ApplicationController
 
  def show
   # raise
+  @event = Event.find(params[:event_id])
   @user = User.find(params[:id])
+  @request = Request.new
   authorize @user
 
 end
