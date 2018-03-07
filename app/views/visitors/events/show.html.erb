@@ -4,9 +4,21 @@
 <h3> <%= @event.event_description %></h3>
 
 <h3>Who is comming:</h3>
-<h2> Organizer: <%= link_to @event.user.first_name, visitors_user_path(id: @event.user.id, event_id: @event.id) %></h2>
+<h2> Organizer: <%= link_to @event.user.first_name, visitors_event_user_path(id: @event.user.id, event_id: @event.id) %></h2>
 
-<p>Join request button --> send to chat</p>
+
+
 <%= link_to "Continue Looking", visitors_events_path %>
 
-
+<%# simple_form_for @request, url: visitors_event_requests_path(@event) do |f| %>
+  <%# f.input :user_id, as: :hidden, input_html: { value:  @user.id } %>
+  <%# f.submit "Chat" %>
+<%# end %>
+<% if @request %>
+  <%= link_to "chat", visitors_request_messages_path(@request) %>
+<% else %>
+  <%= simple_form_for Request.new, url: visitors_event_requests_path(@event) do |f| %>
+    <%= f.input :user_id, as: :hidden, input_html: { value:  @user } %>
+    <%= f.submit "Chat" %>
+  <% end %>
+<% end %>
