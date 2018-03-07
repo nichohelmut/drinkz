@@ -4,8 +4,8 @@
 <h3> <%= @event.event_description %></h3>
 
 <h3>Who is comming:</h3>
-<h2> You: <%= link_to @event.user.first_name, locals_user_path(@event.user, event_id: @event.id) %></h2>
+<h2> You: <%= link_to @event.user.first_name, locals_event_user_path(@event, current_user) %></h2>
 
-<%= link_to "Confirm", locals_users_path %>
+<%= link_to "Confirm", locals_event_users_path(@event) %>
 
 

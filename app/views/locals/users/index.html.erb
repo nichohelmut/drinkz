@@ -7,6 +7,6 @@
 ></div>
 
 <% @users.each do |user| %>
-<h1> <%= link_to user.first_name, locals_user_path(user) %> </h1>
-<h2> <%= user.age %> </h2>
+  <h1> <%= link_to user.first_name, locals_event_user_path(@event, user) %> </h1>
+  <h2> <%= user.age %> </h2>
 <% end %>

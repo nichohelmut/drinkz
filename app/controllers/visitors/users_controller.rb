@@ -1,5 +1,5 @@
 class Visitors::UsersController < ApplicationController
-
+skip_before_action :authenticate_user!, only: :show
   def index
    @users = policy_scope(User).order(created_at: :desc)
  end
