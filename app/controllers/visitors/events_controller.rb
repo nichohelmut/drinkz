@@ -24,6 +24,9 @@ class Visitors::EventsController < ApplicationController
     @event = Event.find(params[:id])
     @event.user = current_user
     authorize @event
+    # @user = @request.status
+    # @user = @user.id
+
   end
 
 #   def new
