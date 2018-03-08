@@ -7,10 +7,11 @@
       <div class="col-md-11">
         <p class="card-text">
           <span class="text-muted">
-            <h1><%= message.request.event.location_name %></h1>
+            <%= message.timestamp %>
+            <h1><%= message.request.event.location_name %></h1> <h2>  <%= message.user.first_name%> says: </h2>
             <h3><%= message.title %></h3>
-            You at <%= message.timestamp %> says</span><br>
-            <h2><%= message.body %></h2>
+             </span>
+
           </p>
         </div>
       </div>
@@ -22,7 +23,7 @@
   <%# raise %>
 
     <%= f.input :title %>
-    <%= f.input :body %>
+
     <%= f.button :submit %>
   <% end %>
 

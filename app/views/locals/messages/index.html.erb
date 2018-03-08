@@ -7,9 +7,8 @@
       <div class="col-md-11">
         <p class="card-text">
           <span class="text-muted">
+            You at<%= message.timestamp %> says</span>
             <h3><%= message.title %></h3>
-            You at <%= message.timestamp %> says</span><br>
-            <h2><%= message.body %></h2>
           </p>
         </div>
       </div>
@@ -17,12 +16,15 @@
   </div>
 <% end %>
 
+
+
   <%= simple_form_for @message, url:  locals_request_messages_path do |f| %>
   <%# raise %>
 
     <%= f.input :title %>
-    <%= f.input :body %>
+
     <%= f.button :submit %>
   <% end %>
 
+<%= link_to "Back to Users", locals_event_users_path(@request.event) %>
 <%# message.user.first_name %>

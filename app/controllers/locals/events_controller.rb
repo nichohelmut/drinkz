@@ -21,7 +21,7 @@ class Locals::EventsController < ApplicationController
 
     def show
       @event = Event.find(params[:id])
-      @event.user = current_user
+      # @event.user = current_user
       authorize @event
     end
 
@@ -40,7 +40,12 @@ class Locals::EventsController < ApplicationController
       else
        :new
      end
+   end
 
+   def destroy
+    @event = Event.find(params[:id])
+    @event.destroy
+    redirect_to locals_events_path
    end
 
    private

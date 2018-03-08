@@ -22,8 +22,10 @@ class Visitors::EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
-    @event.user = current_user
+    # @event.user = current_user
     authorize @event
+    @request = Request.where(user: current_user, event: @event).first
+
     # @user = @request.status
     # @user = @user.id
 
