@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
-  root to: 'pages#home'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   # resources :users, only: [:new, :create, :show] do
   #   resources :events, only: [:index, :show, :new, :create] do
@@ -16,7 +15,7 @@ Rails.application.routes.draw do
 
     # /requests/345/messages/new
 
-    resources :events, only: [:index, :show, :new, :create] do
+    resources :events, only: [:index, :show, :new, :create, :destroy] do
       resources :users, only: [:index, :show]
       resources :requests, only: [:new, :create]
     end
@@ -37,6 +36,8 @@ Rails.application.routes.draw do
     end
 
   end
+  devise_for :users, :controllers => { registrations: 'registrations' }
+  root to: 'pages#home'
 end
 
 

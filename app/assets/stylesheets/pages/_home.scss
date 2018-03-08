@@ -1,1 +1,33 @@
 // Specific CSS for your home-page
+
+.home-container {
+  display: flex;
+  justify-content: space-around;
+
+}
+
+h2 {
+  text-align: center;
+  margin: 0px;
+}
+
+.btn-medium {
+  background-color: black;
+  z-index: 10;
+
+  a {
+    color: white;
+    display: block;
+
+  }
+}
+
+.btn-medium-local {
+  background-color: #FF892E;
+  z-index: 10;
+
+  a {
+    color: black;
+    display: block;
+  }
+}

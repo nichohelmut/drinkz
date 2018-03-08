@@ -6,7 +6,7 @@ class MessagePolicy < ApplicationPolicy
   end
 
   def index?
-    true
+    user.admin? || record.request.user == user || record.request.event.user == user
   end
 
   def show?

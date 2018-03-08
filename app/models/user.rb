@@ -9,7 +9,7 @@ class User < ApplicationRecord
   has_many :messages, dependent: :destroy
   geocoded_by :location_address
   after_validation :geocode, if: :will_save_change_to_location_address?
-  # validates :first_name, presence: true
+  #validates :first_name, presence: true
   # validates :last_name, presence: true
   # validates :email, uniqueness: true, presence: true
   # validates :age, presence: true

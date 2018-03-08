@@ -7,7 +7,8 @@
       @request = Request.find(params[:request_id])
       @messages = @request.messages
       # initializing a new instance of Message for the input
-      @message = Message.new
+      @message = Message.new(request: @request)
+      authorize @message
     end
 
     def new

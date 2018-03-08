@@ -7,7 +7,8 @@ class Visitors::MessagesController < ApplicationController
       @messages = policy_scope(Message).where(request_id: @request.id).order(created_at: :desc)
 
       # initializing a new instance of Message for the input
-      @message = Message.new
+      @message = Message.new(request: @request)
+      authorize @message
     end
 
     def new
@@ -22,9 +23,9 @@ class Visitors::MessagesController < ApplicationController
         # retrieve the request from the params
         @request = Request.find(params[:request_id])
         # assign the request to the message
-        @message.request_id = @request.id
+        @message.request = @request
         # assign the current user as the sender of the message
-        @message.user_id = current_user.id
+        @message.user = current_user
         authorize @message
         if @message.save
           redirect_to visitors_request_messages_path(@request.id)

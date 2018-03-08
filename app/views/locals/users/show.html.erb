@@ -8,13 +8,15 @@
 <p>About <%= @user.first_name %>: <%= @user.description %></p>
 
 <%# link_to "Chat",  %>
+<% if @user != current_user %>
 <% if @request %>
-  <%= link_to "chat", locals_request_messages_path(@request) %>
+<%= link_to "chat", locals_request_messages_path(@request) %>
 <% else %>
-  <%= simple_form_for Request.new, url: locals_event_requests_path(@event) do |f| %>
-    <%= f.input :user_id, as: :hidden, input_html: { value:  @user.id } %>
-    <%= f.submit "Chat" %>
-  <% end %>
+<%= simple_form_for Request.new, url: locals_event_requests_path(@event) do |f| %>
+<%= f.input :user_id, as: :hidden, input_html: { value:  @user.id } %>
+<%= f.submit "Chat" %>
+<% end %>
+<% end %>
 <% end %>
 
 <%= link_to "Back to Visitors", locals_event_users_path(@event)  %>

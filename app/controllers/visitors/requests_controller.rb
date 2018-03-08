@@ -21,6 +21,9 @@
     @event = Event.find(params[:event_id])
     @request.event = @event
     authorize @request
+
+
+    authorize @request
     if @request.save
       redirect_to visitors_request_messages_path(@request) # index messages for this specific event
     else
@@ -33,7 +36,6 @@
     def request_params
       params.require(:request).permit(:user_id)
     end
-
   end
 
 
