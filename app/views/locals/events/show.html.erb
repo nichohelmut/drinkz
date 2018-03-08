@@ -6,6 +6,6 @@
 <h3>Who is comming:</h3>
 <h2> You: <%= link_to @event.user.first_name, locals_event_user_path(@event, current_user) %></h2>
 
-<%= link_to "Confirm", locals_event_users_path(@event) %>
+<%= link_to "People around you", locals_event_users_path(@event) %>
 
 
