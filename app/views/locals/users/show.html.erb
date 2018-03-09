@@ -3,7 +3,7 @@
 <h2> <%= @user.age %> </h2>
 <h2> <%= @user.dedication %></h2>
 <h2> <%= @user.stay %></h2>
-<h3> <%= @user.email %> </h3>
+<h2> <%= @user.email %> </h2>
 <h2>Type of Music: <%= @user.typeofmusic %></h2>
 <p>About <%= @user.first_name %>: <%= @user.description %></p>
 
@@ -19,7 +19,7 @@
 <% end %>
 <% end %>
 
-<%= link_to "Back to Visitors", locals_event_users_path(@event)  %>
+<%= link_to "Back to Visitors", locals_event_users_path(@event), class: "btn-submit"  %>
 
 <%# link_to "Back to Event", visitors_event_path(id: params[:event_id])  %>
 

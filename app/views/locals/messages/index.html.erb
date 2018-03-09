@@ -7,8 +7,8 @@
       <div class="col-md-11">
         <p class="card-text">
           <span class="text-muted">
-            You at<%= message.timestamp %> says</span>
-            <h3><%= message.title %></h3>
+            <p>You at </p> <h2> <%= message.timestamp %> says</span></h2>
+            <p><%= message.title %></p>
           </p>
         </div>
       </div>
@@ -23,7 +23,7 @@
 
     <%= f.input :title %>
 
-    <%= f.button :submit %>
+    <%= f.button :submit, class: "btn-submit" %>
   <% end %>
 
 <%= link_to "Back to Users", locals_event_users_path(@request.event) %>

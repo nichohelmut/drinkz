@@ -28,10 +28,10 @@ User.create(first_name: "Tim", last_name: "what",location_address: "Lindenstraß
 
 ", typeofmusic: "rock")
 
-Event.create!(user_id: User.all.sample.id, location_name: "Kater", location_address: "Rudi-Dutschke-Straße 26, 10969 Berlin", time: Time.now, event_description:"very nice")
-Event.create!(user_id: User.all.sample.id,location_name: "bier", location_address: "Charlottenstraße 16, 10117 Berlin", time: Time.now, event_description:"not nice")
-Event.create!(user_id: User.all.sample.id,location_name: "haus", location_address: "Friedrichstraße 215, 10969 Berlin", time: Time.now, event_description:"sick nice")
-Event.create!(user_id: User.all.sample.id,location_name: "gut", location_address: "Schützenstraße 5, 10117 Berlin", time: Time.now, event_description:"very ok")
-Event.create!(user_id: User.all.sample.id,location_name: "nice", location_address: "Friedrichstraße 45, 10969 Berlin", time: Time.now, event_description:"hhöäh nice")
+Event.create!(user_id: User.all.sample.id, location_name: "Kater", location_address: "Rudi-Dutschke-Straße 26, 10969 Berlin", time: Time.now, event_description:"It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, ")
+Event.create!(user_id: User.all.sample.id,location_name: "bier", location_address: "Charlottenstraße 16, 10117 Berlin", time: Time.now, event_description:"It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, ")
+Event.create!(user_id: User.all.sample.id,location_name: "haus", location_address: "Friedrichstraße 215, 10969 Berlin", time: Time.now, event_description:"It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, ")
+Event.create!(user_id: User.all.sample.id,location_name: "gut", location_address: "Schützenstraße 5, 10117 Berlin", time: Time.now, event_description:"It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, ")
+Event.create!(user_id: User.all.sample.id,location_name: "nice", location_address: "Friedrichstraße 45, 10969 Berlin", time: Time.now, event_description:"It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, ")
 
 

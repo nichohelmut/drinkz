@@ -1,6 +1,9 @@
 <% @events.each do |event| %>
 <h1> <%= link_to event.location_name, locals_event_path(event) %></h1>
+<p>Where??</p>
 <h2> <%= event.location_address %> </h2>
-<h2> <%= event.time %> </h2>
-<p> <%= event.event_description %></p>
+<p>When??</p>
+<h2> <%= event.time.strftime("%H:%M") %> </h2>
+<p>What??</p>
+<h2> <%= event.event_description %></h2>
 <% end %>

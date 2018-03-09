@@ -1,7 +1,10 @@
-<h1> Eventname: <%= @event.location_name %> </h1>
+<h1> <%= @event.location_name %> </h1>
+<p> Where??</p>
 <h2> <%= @event.location_address %> </h2>
+<p>When??</p>
 <h2> <%= @event.time.strftime("%H:%M") %> </h2>
-<h3> <%= @event.event_description %></h3>
+<p>What??</p>
+<h2> <%= @event.event_description %></h2>
 
 <h3>Who is comming:</h3>
 <h2> Organizer: <%= link_to @event.user.first_name, visitors_event_user_path(id: @event.user.id, event_id: @event.id) %></h2>
@@ -33,13 +36,13 @@
       I get redirected to the chat room -->
 
     <span>Chatbox: <%= @request.id  %></span>
-    <%= link_to "chat", visitors_request_messages_path(@request) %>
+    <%= link_to "chat", visitors_request_messages_path(@request), class: "btn-submit-black" %>
   <% else %>
     <%= simple_form_for Request.new, url: visitors_event_requests_path(@event) do |f| %>
       <%= f.input :user_id, as: :hidden, input_html: { value:  @user } %>
-      <%= f.submit "Join the event!" %>
+      <%= f.submit "Join the event!", class: "btn-submit-black" %>
     <% end %>
   <% end %>
 <% else %>
-<%=  link_to "Sign Up to Join the Event", new_user_registration_path %>
+<%=  link_to "Sign Up to Join the Event", new_user_registration_path,  class: "btn-submit-black" %>
 <% end %>
