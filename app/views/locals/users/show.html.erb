@@ -1,25 +1,26 @@
-<h1> <%= @user.first_name %> </h1>
-<h1> <%= @user.last_name %> </h1>
-<h2> <%= @user.age %> </h2>
-<h2> <%= @user.dedication %></h2>
-<h2> <%= @user.stay %></h2>
-<h2> <%= @user.email %> </h2>
-<h2>Type of Music: <%= @user.typeofmusic %></h2>
-<p>About <%= @user.first_name %>: <%= @user.description %></p>
-
+<div class="show-bottom">
+  <h1> <%= @user.first_name %> </h1>
+  <h1> <%= @user.last_name %> </h1>
+  <p>Age: <%= @user.age %> </p>
+  <h2> <%= @user.dedication %></h2>
+  <p>Time in Berlin: <%= @user.stay %></p>
+  <h2> <%= @user.email %> </h2>
+  <p>Type of Music: <%= @user.typeofmusic %></p>
+  <h2>About <%= @user.first_name %>: <%= @user.description %></h2>
+  <%= link_to "Back to Visitors", locals_event_users_path(@event)   %>
+</div>
 <%# link_to "Chat",  %>
 <% if @user != current_user %>
-<% if @request %>
-<%= link_to "chat", locals_request_messages_path(@request) %>
-<% else %>
-<%= simple_form_for Request.new, url: locals_event_requests_path(@event) do |f| %>
-<%= f.input :user_id, as: :hidden, input_html: { value:  @user.id } %>
-<%= f.submit "Chat" %>
-<% end %>
-<% end %>
-<% end %>
+   <% if @request %>
+    <%= link_to "chat", locals_request_messages_path(@request), class: "btn-submit" %>
+    <% else %>
+    <%= simple_form_for Request.new, url: locals_event_requests_path(@event) do |f| %>
+    <%= f.input :user_id, as: :hidden, input_html: { value:  @user.id } %>
+    <%= f.submit "Chat", class: "btn-submit" %>
+      <% end %>
+    <% end %>
+  <% end %>
 
-<%= link_to "Back to Visitors", locals_event_users_path(@event), class: "btn-submit"  %>
 
 <%# link_to "Back to Event", visitors_event_path(id: params[:event_id])  %>
 
