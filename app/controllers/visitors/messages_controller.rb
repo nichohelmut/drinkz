@@ -1,10 +1,11 @@
 class Visitors::MessagesController < ApplicationController
   def index
       # retireving the request from the params
-      @request = Request.find(params[:request_id])
-
+      #@request = Request.find(params[:request_id])
+      @request = Request.where(user: current_user, event: @event)
       # retrieving all messages
-      @messages = policy_scope(Message).where(request_id: @request.id).order(created_at: :desc)
+      @messages = policy_scope(Message).where(request_id: @request.ids).order(created_at: :desc)
+
 
       # initializing a new instance of Message for the input
       @message = Message.new(request: @request)
