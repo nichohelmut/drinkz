@@ -2,7 +2,7 @@ class Locals::RequestsController < ApplicationController
   def index
    @requests = policy_scope(Request).order(created_at: :desc)
    @event = Event.find(params[:id])
- end
+  end
 
   def show
     @request = Request.find(params[:id])

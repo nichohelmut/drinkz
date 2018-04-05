@@ -1,30 +1,23 @@
 <% @messages.each do |message| %>
-
-
-<div class="card">
-  <div class="card-block">
-    <div class="row">
-      <div class="col-md-11">
-        <p class="card-text">
-          <span class="text-muted">
-            <p>You at </p> <h2> <%= message.timestamp %> says</span></h2>
-            <p><%= message.title %></p>
-          </p>
+  <div class="card">
+    <div class="card-block">
+      <div class="row">
+        <div class="col-md-11">
+          <p class="card-text">
+            <span class="text-muted">
+              <p>You at </p> <h2> <%= message.timestamp %> says</h2>
+            </span>
+              <p><%= message.title %></p>
+            </p>
         </div>
       </div>
     </div>
   </div>
 <% end %>
 
-
-
-  <%= simple_form_for @message, url:  locals_request_messages_path do |f| %>
-  <%# raise %>
-
-    <%= f.input :title %>
-
-    <%= f.button :submit, class: "btn-submit" %>
+    <%= simple_form_for @message, url:  locals_request_messages_path do |f| %>
+      <%= f.input :title %>
+      <%= f.button :submit, class: "btn-submit" %>
   <% end %>
-
 <%= link_to "Back to Users", locals_event_users_path(@request.event) %>
 <%# message.user.first_name %>

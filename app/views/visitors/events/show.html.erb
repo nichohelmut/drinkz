@@ -6,30 +6,18 @@
   <h2> <%= @event.time.strftime("%H:%M") %> </h2>
   <p>What??</p>
   <h2> <%= @event.event_description %></h2>
-
   <p>Who is comming:</p>
   <h2> Organizer: <%= link_to @event.user.first_name, visitors_event_user_path(id: @event.user.id, event_id: @event.id) %></h2>
-
-
-
-  <div>
-  </div class="continue-btn">
+</div>
+<div class="continue-btn">
   <%= link_to "Continue Looking", visitors_events_path %>
 </div>
 <%# simple_form_for @request, url: visitors_event_requests_path(@event) do |f| %>
 <%# f.input :user_id, as: :hidden, input_html: { value:  @user.id } %>
 <%# f.submit "Chat" %>
 <%# end %>
-<% @event.requests.each do | request |  %>
-<% if request %>
-
-<% else %>
-
-<% end %>
-<% end %>
-
 <% if user_signed_in? %>
-<% if @request %>
+  <% if @request %>
 <!--     I have already made a request
     In my DB, there is a request with my current user ID AND the event page I am right now ID
     @event.requests.where('requests.user_id = ?', current_user.id)
@@ -39,12 +27,12 @@
 
     <span>Chatbox: <%= @request.id  %></span>
     <%= link_to "chat", visitors_request_messages_path(@request), class: "btn-submit-black" %>
-    <% else %>
+  <% else %>
     <%= simple_form_for Request.new, url: visitors_event_requests_path(@event) do |f| %>
-    <%= f.input :user_id, as: :hidden, input_html: { value:  @user } %>
-    <%= f.submit "Join the event!", class: "btn-submit-black" %>
+      <%= f.input :user_id, as: :hidden, input_html: { value:  @user } %>
+      <%= f.submit "Join the event!", class: "btn-submit-black" %>
     <% end %>
-    <% end %>
-    <% else %>
+  <% end %>
+<% else %>
     <%=  link_to "Sign Up to Join the Event", new_user_registration_path,  class: "btn-submit-black" %>
-    <% end %>
+<% end %>

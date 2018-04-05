@@ -4,8 +4,6 @@ class Locals::UsersController < ApplicationController
      @users = policy_scope(User).order(created_at: :desc)
      @event = Event.find(params[:event_id])
      @users = User.where.not(latitude: nil, longitude: nil)
-
-
      @markers = @users.map do |user|
       {
         lat: user.latitude,
@@ -16,12 +14,10 @@ class Locals::UsersController < ApplicationController
     end
 
     def show
-    # raise
     @event = Event.find(params[:event_id])
     @user = User.find(params[:id])
     @request = @event.requests.find_by_user_id(@user.id) #instance or nil
     authorize @user
-
   end
 
   def new
@@ -39,13 +35,9 @@ class Locals::UsersController < ApplicationController
     end
   end
 
-
-
   private
-
   def user_params
     params.require(:user).permit([:first_name, :age, :email, :dedication])
-
   end
 end
 

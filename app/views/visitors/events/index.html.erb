@@ -6,12 +6,11 @@
 ></div>
 
 <% @events.each do |event| %>
-<h1> <%= link_to event.location_name, visitors_event_path(event)  %></h1>
-<h2> <%= event.location_address %> </h2>
-<p> <%= event.time %> </p>
-<h2> <%= event.event_description %></h2>
-<p>Interessted? <%= link_to "Yea", visitors_event_path(event) %> Nah</p>
+  <h1> <%= link_to event.location_name, visitors_event_path(event)  %></h1>
+  <h2> <%= event.location_address %> </h2>
+  <p> <%= event.time %> </p>
+  <h2> <%= event.event_description %></h2>
+  <p>Interessted? <%= link_to "Yea", visitors_event_path(event) %> Nah</p>
 <% end %>
-
 
 <p>filter button</p>
