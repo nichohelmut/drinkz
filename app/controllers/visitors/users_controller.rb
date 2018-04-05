@@ -36,12 +36,8 @@ class Visitors::UsersController < ApplicationController
       end
     end
 
-
-
     private
-
     def user_params
       params.require(:user).permit([:first_name, :last_name, :age, :email, :dedication, :stay, :description, :typeofmusic])
-
     end
   end

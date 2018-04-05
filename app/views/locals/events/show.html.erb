@@ -13,9 +13,6 @@
           <h2> <%= @event.event_description %></h2>
           <p>Who is comming:</p>
           <h2> Organizer: <%= link_to @event.user.first_name, locals_event_user_path(id: @event.user.id, event_id: @event.id) %>(You)</h2>
-
-
-
           <%= link_to "see other events", locals_events_path %>
         </div>
 

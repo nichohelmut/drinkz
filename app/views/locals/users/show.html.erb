@@ -11,16 +11,15 @@
 </div>
 <%# link_to "Chat",  %>
 <% if @user != current_user %>
-   <% if @request %>
+  <% if @request %>
     <%= link_to "chat", locals_request_messages_path(@request), class: "btn-submit" %>
-    <% else %>
+  <% else %>
     <%= simple_form_for Request.new, url: locals_event_requests_path(@event) do |f| %>
     <%= f.input :user_id, as: :hidden, input_html: { value:  @user.id } %>
     <%= f.submit "Chat", class: "btn-submit" %>
-      <% end %>
     <% end %>
   <% end %>
-
+<% end %>
 
 <%# link_to "Back to Event", visitors_event_path(id: params[:event_id])  %>
 

@@ -17,3 +17,6 @@ class User < ApplicationRecord
     email.split('@')[0]
   end
 end
+
+
+

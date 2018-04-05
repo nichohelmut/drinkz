@@ -7,9 +7,7 @@ class Locals::EventsController < ApplicationController
 
   def index
     @events = policy_scope(Event).order(created_at: :desc)
-
     @events = Event.where.not(latitude: nil, longitude: nil)
-
     @markers = @events.map do |event|
       {
         lat: event.latitude,
@@ -28,7 +26,6 @@ class Locals::EventsController < ApplicationController
     def new
       @event = Event.new
       authorize @event
-
     end
 
     def create
@@ -52,7 +49,4 @@ class Locals::EventsController < ApplicationController
    def event_params
     params.require(:event).permit([:location_name, :location_address,:event_description, :time, :user])
   end
-
-
-
 end
