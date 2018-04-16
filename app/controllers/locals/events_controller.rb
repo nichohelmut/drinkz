@@ -17,10 +17,23 @@ class Locals::EventsController < ApplicationController
     end
   end
 
-    def show
-      @event = Event.find(params[:id])
+  def show
+    @event = Event.find(params[:id])
       # @event.user = current_user
+      @events = Event.where.not(latitude: nil, longitude: nil)
+      @markers =
+    [{
+      lat: @event.latitude,
+      lng: @event.longitude,
+      icon: '/party.png',
+      draggable: false
+      }]
+        # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+
+
+
       authorize @event
+
     end
 
     def new
@@ -43,10 +56,10 @@ class Locals::EventsController < ApplicationController
     @event = Event.find(params[:id])
     @event.destroy
     redirect_to locals_events_path
-   end
+  end
 
-   private
-   def event_params
+  private
+  def event_params
     params.require(:event).permit([:location_name, :location_address,:event_description, :time, :user])
   end
 end
