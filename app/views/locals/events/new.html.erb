@@ -1,3 +1,4 @@
+<%= link_to "see other events", locals_events_path %>
 <%= simple_form_for @event, url: locals_events_path do |f| %>
 <%= f.input :event_description %>
 <%= f.input :location_name %>
@@ -6,4 +7,3 @@
 <%= f.button :submit, class: "btn-submit" %>
 <% end %>
 
-<%= link_to "see other events", locals_events_path %>

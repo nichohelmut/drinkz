@@ -26,7 +26,6 @@ class Visitors::EventsController < ApplicationController
     [{
       lat: @event.latitude,
       lng: @event.longitude,
-      icon: '/party.png',
       draggable: false
       }]
 

@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
   end
   def configure_permitted_parameters
     # For additional fields in app/views/devise/registrations/new.html.erb
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :age, :dedication])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :age, :dedication, :location_address])
   end
   # def after_sign_up_path_for(resource)
   #   visitors_request_messages_path(resource)
