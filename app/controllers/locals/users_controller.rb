@@ -45,7 +45,7 @@ class Locals::UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit([:first_name, :age, :email, :dedication])
+    params.require(:user).permit([:first_name, :age, :email, :dedication, :location_address])
   end
 end
 
