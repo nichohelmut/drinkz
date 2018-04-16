@@ -1,3 +1,12 @@
+<div
+  id="map"
+  style="width: 100%;
+  height: 400px;"
+  data-markers="<%= @markers.to_json %>"
+  data-user_markers="<%= @user_markers.to_json %>"
+
+></div>
+
 <% @events.each do |event| %>
 <h1> <%= link_to event.location_name, locals_event_path(event) %></h1>
 <p>Where??</p>
