@@ -13,12 +13,12 @@ class Locals::UsersController < ApplicationController
 
       @event = Event.find(params[:event_id])
       @events = Event.where.not(latitude: nil, longitude: nil)
-      @markers = @events.map do |event|
-        {
-          lat: event.latitude,
-          lng: event.longitude
-        }
-      end
+      @markers =
+    [{
+      lat: @event.latitude,
+      lng: @event.longitude,
+      draggable: false
+      }]
     end
 
     def show

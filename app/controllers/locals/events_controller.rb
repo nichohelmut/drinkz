@@ -1,8 +1,3 @@
-# module Locals
-#   class EventsController
-#   end
-# end
-
 class Locals::EventsController < ApplicationController
 
   def index
@@ -25,13 +20,9 @@ class Locals::EventsController < ApplicationController
     [{
       lat: @event.latitude,
       lng: @event.longitude,
-      icon: '/party.png',
       draggable: false
       }]
         # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
-
-
-
       authorize @event
 
     end
