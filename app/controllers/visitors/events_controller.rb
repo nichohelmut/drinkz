@@ -21,6 +21,14 @@ class Visitors::EventsController < ApplicationController
     @request = Request.where(user: current_user, event: @event).first
     # @user = @request.status
     # @user = @user.id
+    @events = Event.where.not(latitude: nil, longitude: nil)
+      @markers =
+    [{
+      lat: @event.latitude,
+      lng: @event.longitude,
+      icon: '/party.png',
+      draggable: false
+      }]
 
   end
 end
