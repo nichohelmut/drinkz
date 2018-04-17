@@ -1,25 +1,45 @@
 <div class="show-bottom">
-  <h1> <%= @user.first_name %> </h1>
-  <h1> <%= @user.last_name %> </h1>
-  <p>Age: <%= @user.age %> </p>
-  <h2> <%= @user.dedication %></h2>
-  <p>Time in Berlin: <%= @user.stay %></p>
-  <h2> <%= @user.email %> </h2>
-  <p>Type of Music: <%= @user.typeofmusic %></p>
-  <h2>About <%= @user.first_name %>: <%= @user.description %></h2>
-  <%= link_to "Back to Visitors", locals_event_users_path(@event)   %>
+  <h1>  </h1>
+  <h1>  </h1>
+  <p> </p>
+  <h2> </h2>
+  <p></p>
+
+
 </div>
 <%# link_to "Chat",  %>
-<% if @user != current_user %>
+
+
+<%# link_to "Back to Event", visitors_event_path(id: params[:event_id])  %>
+
+
+<figure class="snip1208">
+  <img src="https://www.top10berlin.de/sites/top10berlin.de/files/location/mainimages/2015/10/08/bar-ansicht_dpa.jpg" alt="sample66"/>
+  <div class="date"><span class="day"><%= @event.time.strftime("%H:%M") %></span><span class="month">Today</span></div><i class="ion-beer"></i>
+  <figcaption>
+    <h3><%= @user.first_name %></h3>
+    <p><%= @user.last_name %></p>
+    <p>Age: <%= @user.age %></p>
+    <p><%= @user.dedication %></p>
+    <p>Time in Berlin: <%= @user.stay %></p>
+    <p> <%= @user.email %> </p>
+    <p>Type of Music: <%= @user.typeofmusic %></p>
+    <p>About <%= @user.first_name %>: <%= @user.description %></p>
+
+
+
+    <% if @user != current_user %>
   <% if @request %>
-    <%= link_to "chat", locals_request_messages_path(@request), class: "btn-submit" %>
+    <button> <%= link_to "chat", locals_request_messages_path(@request) %></button>
   <% else %>
     <%= simple_form_for Request.new, url: locals_event_requests_path(@event) do |f| %>
     <%= f.input :user_id, as: :hidden, input_html: { value:  @user.id } %>
-    <%= f.submit "Chat", class: "btn-submit" %>
+   <button> <%= f.submit "Chat" %></button>
     <% end %>
   <% end %>
 <% end %>
 
-<%# link_to "Back to Event", visitors_event_path(id: params[:event_id])  %>
+  <button> <%= link_to "Back to Visitors", locals_event_users_path(@event)   %></button>
+
+</figure>
 

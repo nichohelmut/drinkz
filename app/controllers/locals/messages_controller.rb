@@ -8,7 +8,7 @@
       @messages = @request.messages
       # initializing a new instance of Message for the input
       @message = Message.new(request: @request)
-      authorize @message
+      # authorize @message
     end
 
     def new
