@@ -33,7 +33,7 @@
 
 
 
-    <div class="date"><span class="day"><%= event.time.strftime("%H:%M") %></span><span class="month">Today</span></div><i class="ion-beer"></i>
+    <div class="date"><span class="day"><%= event.time.strftime("%H:%M") %></span><span class="month">Today</span></div><i class="ion-star"></i>
     <figcaption>
       <h1> <%= link_to event.location_name, visitors_event_path(event) %></h1>    <p><%= event.location_address %> </p>
       <p><%= event.event_description %></p>
