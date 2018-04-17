@@ -51,6 +51,6 @@ class Locals::EventsController < ApplicationController
 
   private
   def event_params
-    params.require(:event).permit([:location_name, :location_address,:event_description, :time, :user])
+    params.require(:event).permit([:location_name, :location_address,:event_description, :event_picture, :time, :user])
   end
 end

@@ -2,6 +2,7 @@
 <%= simple_form_for @event, url: locals_events_path do |f| %>
 <%= f.input :event_description %>
 <%= f.input :location_name %>
+<%= f.input :event_picture, collection: %w( Party Bar Restaurant Park Sport Shopping Sightseeing Coding) %>
 <%= f.input :location_address %>
 <%= f.input :time %>
 <%= f.button :submit, class: "btn-submit" %>
