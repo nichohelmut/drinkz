@@ -7,29 +7,43 @@
 
 ></div>
 
-<div class="container-fluid">
+<!-- <div class="container-fluid">
   <div class="show-bottom">
     <div class="row">
       <div class="col-xs-12">
         <div class="show-titles">
 
-          <h1> <%= @event.location_name %></h1>
+          <h1> </h1>
           <p> Where?? </p>
-          <h2> <%= @event.location_address %></h2>
+          <h2> </h2>
           <p> When?? </p>
-          <h2> <%= @event.time.strftime("%H:%M") %></h2>
+          <h2> </h2>
           <p> Details?? </p>
-          <h2> <%= @event.event_description %></h2>
+          <h2> </h2>
           <p>Who is comming:</p>
-          <h2> Organizer: <%= link_to @event.user.first_name, locals_event_user_path(id: @event.user.id, event_id: @event.id) %>(You)</h2>
-          <%= link_to "see other events", locals_events_path %>
+          <h2>
+
         </div>
 
       </div>
     </div>
   </div>
-  <%= link_to "People around you", locals_event_users_path(@event), class: "btn-submit" %>
-</div>
+
+</div> -->
 <%# link_to "Delete", destroy_locals_events_path,
 method: :delete,
 data: { confirm: "Are you sure?" } %>
+
+
+
+<figure class="snip1208">
+  <img src="https://www.top10berlin.de/sites/top10berlin.de/files/location/mainimages/2015/10/08/bar-ansicht_dpa.jpg" alt="sample66"/>
+  <div class="date"><span class="day"><%= @event.time.strftime("%H:%M") %></span><span class="month">Today</span></div><i class="ion-beer"></i>
+  <figcaption>
+    <h3><%= @event.location_name %></h3>
+    <p><%= @event.location_address %></p>
+    <p><%= @event.event_description %></p>
+    <p>Organizer: <%= link_to @event.user.first_name, locals_event_user_path(id: @event.user.id, event_id: @event.id) %>(You)</p>
+     <%= link_to "see other events", locals_events_path %>
+    <button>  <%= link_to "People around you", locals_event_users_path(@event) %></button>
+</figure>
