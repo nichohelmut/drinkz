@@ -7,25 +7,21 @@
 
 ></div>
 
-<div class="show-bottom">
-  <h1> <%= @event.location_name %> </h1>
-  <p> Where??</p>
-  <h2> <%= @event.location_address %> </h2>
-  <p>When??</p>
-  <h2> <%= @event.time.strftime("%H:%M") %> </h2>
-  <p>What??</p>
-  <h2> <%= @event.event_description %></h2>
-  <p>Who is comming:</p>
-  <h2> Organizer: <%= link_to @event.user.first_name, visitors_event_user_path(id: @event.user.id, event_id: @event.id) %></h2>
-</div>
-<div class="continue-btn">
-  <%= link_to "Continue Looking", visitors_events_path %>
-</div>
-<%# simple_form_for @request, url: visitors_event_requests_path(@event) do |f| %>
-<%# f.input :user_id, as: :hidden, input_html: { value:  @user.id } %>
-<%# f.submit "Chat" %>
-<%# end %>
-<% if user_signed_in? %>
+
+
+<figure class="snip1208">
+<!-- Party Bar Restaurant Park Sport Shopping Sightseeing Homeless Coding -->
+<%= render "locals/events/images" %>
+  <div class="date"><span class="day"><%= @event.time.strftime("%H:%M") %></span><span class="month">Today</span></div><i class="ion-beer"></i>
+  <figcaption>
+    <h3><%= @event.location_name %></h3>
+    <p><%= @event.location_address %></p>
+    <p><%= @event.event_description %></p>
+    <p>Who is comming: <%= link_to @event.user.first_name, visitors_event_user_path(id: @event.user.id, event_id: @event.id) %></p>
+    <div class="continue-btn">
+      <%= link_to "Continue Looking", visitors_events_path %>
+    </div>
+    <% if user_signed_in? %>
   <% if @request %>
 <!--     I have already made a request
     In my DB, there is a request with my current user ID AND the event page I am right now ID
@@ -34,14 +30,20 @@
     Request.where(user: current_user, event: @event)
     I get redirected to the chat room -->
 
-    <span>Chatbox: <%= @request.id  %></span>
-    <%= link_to "chat", visitors_request_messages_path(@request), class: "btn-submit-black" %>
+    <span><% @request.id  %></span>
+    <button> <%= link_to "chat", visitors_request_messages_path(@request) %></button>
   <% else %>
     <%= simple_form_for Request.new, url: visitors_event_requests_path(@event) do |f| %>
       <%= f.input :user_id, as: :hidden, input_html: { value:  @user } %>
-      <%= f.submit "Join the event!", class: "btn-submit-black" %>
+     <button><%= f.submit "Join the event!" %></button>
     <% end %>
   <% end %>
 <% else %>
-    <%=  link_to "Sign In to Join the Event", new_user_session_path,  class: "btn-submit-black" %>
+   <button> <%=  link_to "Sign In to Join the Event", new_user_session_path %></button>
 <% end %>
+</figure>
+
+
+
+
+

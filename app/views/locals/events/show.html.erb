@@ -37,7 +37,10 @@ data: { confirm: "Are you sure?" } %>
 
 
 <figure class="snip1208">
-  <img src="https://www.top10berlin.de/sites/top10berlin.de/files/location/mainimages/2015/10/08/bar-ansicht_dpa.jpg" alt="sample66"/>
+<!-- Party Bar Restaurant Park Sport Shopping Sightseeing Homeless Coding -->
+<%= render "images" %>
+
+
   <div class="date"><span class="day"><%= @event.time.strftime("%H:%M") %></span><span class="month">Today</span></div><i class="ion-beer"></i>
   <figcaption>
     <h3><%= @event.location_name %></h3>
