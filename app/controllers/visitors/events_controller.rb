@@ -8,7 +8,9 @@ class Visitors::EventsController < ApplicationController
     @markers = @events.map do |event|
       {
         lat: event.latitude,
-        lng: event.longitude
+        lng: event.longitude,
+        url: "/visitors/events/#{event.id}"
+
         # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
       }
     end

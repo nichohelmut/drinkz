@@ -1,29 +1,32 @@
 class Locals::UsersController < ApplicationController
 
   def index
-   @users = policy_scope(User).order(created_at: :desc)
-   @users = User.where.not(latitude: nil, longitude: nil)
-   @user_markers = @users.map do |user|
-    {
-      lat: user.latitude,
-        lng: user.longitude#,
+    @users = policy_scope(User).order(created_at: :desc)
+    @users = User.where.not(latitude: nil, longitude: nil)
+    @event = Event.find(params[:event_id])
+    @events = Event.where.not(latitude: nil, longitude: nil)
+
+    @usermarkers = @users.map do |user|
+      {
+        lat: user.latitude,
+        lng: user.longitude,
+        url: "/locals/events/#{@event.id}/users/#{user.id}"
+
           # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
         }
-      end
-
-      @event = Event.find(params[:event_id])
-      @events = Event.where.not(latitude: nil, longitude: nil)
-      @markers =
-    [{
-      lat: @event.latitude,
-      lng: @event.longitude,
-      draggable: false
-      }]
     end
 
-    def show
-      @event = Event.find(params[:event_id])
-      @user = User.find(params[:id])
+    @markers =
+      [{
+        lat: @event.latitude,
+        lng: @event.longitude,
+        draggable: false
+        }]
+      end
+
+  def show
+    @event = Event.find(params[:event_id])
+    @user = User.find(params[:id])
     @request = @event.requests.find_by_user_id(@user.id) #instance or nil
     authorize @user
   end
