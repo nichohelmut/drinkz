@@ -8,10 +8,20 @@ class Visitors::UsersController < ApplicationController
    @markers = @users.map do |user|
     {
       lat: user.latitude,
-      lng: user.longitude#,
+      lng: user.longitude
           # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
         }
       end
+
+      @user_markers = @users.map do |user|
+      {
+        lat: user.latitude,
+        lng: user.longitude,
+        url: "/locals/events/#{@event.id}/users/#{user.id}"
+
+          # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+        }
+    end
     end
 
     def show
