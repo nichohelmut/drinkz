@@ -10,14 +10,6 @@ import { autocomplete } from 'components/autocomplete';
 //     // url_show: "http://localhost:3000/locals/events/1"
 //   };
 
-//    var user_icon = {
-//     // url: "https://image.flaticon.com/icons/svg/603/603401.svg", // url
-//     url: "https://image.flaticon.com/icons/svg/10/10522.svg",
-//     scaledSize: new google.maps.Size(40, 40), // scaled size
-//     origin: new google.maps.Point(0,0), // origin
-//     anchor: new google.maps.Point(0, 0) // anchor
-//   };
-
 //is a map there?
 var mapElement = document.getElementById('map');
 
@@ -25,7 +17,7 @@ var mapElement = document.getElementById('map');
 if (mapElement) { // don't try to build a map if there's no div#map to inject in
   //create new map
   const map = new GMaps({ el: '#map', lat: 0, lng: 0 });
-console.log(map);
+  console.log(map);
   //get data vom controller(DB) parse it with json so we can access atributes of dataset.markers which is data-markers="<%= @markers.to_json %>"
   //found @ index
 
@@ -63,6 +55,7 @@ console.log(map);
   }
 
   console.log(map.markers);
+
 // }
 // if (mapElement) {
 
@@ -96,6 +89,7 @@ console.log(map);
   } else {
     map.fitLatLngBounds(usermarkers);
   }
+
 }
 // }
 

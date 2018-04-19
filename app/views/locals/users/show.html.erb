@@ -14,7 +14,7 @@
 
 
 <figure class="snip1208">
-  <img src="https://www.top10berlin.de/sites/top10berlin.de/files/location/mainimages/2015/10/08/bar-ansicht_dpa.jpg" alt="sample66"/>
+  <img src=" <%= @user.photo %>" alt="sample66"/>
   <div class="date"><span class="day"><%= @event.time.strftime("%H:%M") %></span><span class="month">Today</span></div><i class="ion-beer"></i>
   <figcaption>
     <h3><%= @user.first_name %></h3>

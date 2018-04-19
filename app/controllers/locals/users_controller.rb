@@ -10,7 +10,15 @@ class Locals::UsersController < ApplicationController
       {
         lat: user.latitude,
         lng: user.longitude,
-        url: "/locals/events/#{@event.id}/users/#{user.id}"
+        url: "/locals/events/#{@event.id}/users/#{user.id}",
+        icon: {
+          url: "https://image.flaticon.com/icons/svg/808/808297.svg",
+          scaledSize: {
+            height: 40,
+            width: 40
+          }
+        }
+
 
           # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
         }
@@ -20,7 +28,14 @@ class Locals::UsersController < ApplicationController
       [{
         lat: @event.latitude,
         lng: @event.longitude,
-        draggable: false
+        url: "/locals/events/#{@event.id}",
+        icon: {
+          url: "https://image.flaticon.com/icons/svg/235/235881.svg",
+          scaledSize: {
+            height: 40,
+            width: 40
+          }
+        }
         }]
       end
 
@@ -48,9 +63,7 @@ class Locals::UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit([:first_name, :age, :email, :dedication, :location_address])
+    params.require(:user).permit([:first_name, :age, :email, :dedication, :location_address, :photo])
   end
 end
-
-    #params.require(:user).permit([:first_name, :last_name, :age, :email, :dedication, :stay, :description, :typeofmusic])
 

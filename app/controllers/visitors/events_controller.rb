@@ -9,7 +9,14 @@ class Visitors::EventsController < ApplicationController
       {
         lat: event.latitude,
         lng: event.longitude,
-        url: "/visitors/events/#{event.id}"
+        url: "/visitors/events/#{event.id}",
+        icon: {
+          url: "https://image.flaticon.com/icons/svg/235/235881.svg",
+          scaledSize: {
+            height: 40,
+            width: 40
+          }
+        }
 
         # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
       }
@@ -28,7 +35,14 @@ class Visitors::EventsController < ApplicationController
     [{
       lat: @event.latitude,
       lng: @event.longitude,
-      draggable: false
+      url: "/visitors/events/#{@event.id}",
+      icon: {
+          url: "https://image.flaticon.com/icons/svg/235/235881.svg",
+          scaledSize: {
+            height: 40,
+            width: 40
+          }
+        }
       }]
 
   end

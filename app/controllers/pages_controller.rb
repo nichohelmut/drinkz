@@ -11,15 +11,30 @@ class PagesController < ApplicationController
     @markers = @events.map do |event|
       {
         lat: event.latitude,
-        lng: event.longitude
+        lng: event.longitude,
+        url: "/",
+        icon: {
+          url: "https://image.flaticon.com/icons/svg/235/235881.svg",
+          scaledSize: {
+            height: 40,
+            width: 40
+          }
+        }
         # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
       }
     end
 
-    @user_markers = @users.map do |user|
+    @usermarkers = @users.map do |user|
     {
       lat: user.latitude,
       lng: user.longitude,
+      icon: {
+          url: "https://image.flaticon.com/icons/svg/808/808297.svg",
+          scaledSize: {
+            height: 40,
+            width: 40
+          }
+        }
 
           # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
         }

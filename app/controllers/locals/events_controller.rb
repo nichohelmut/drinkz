@@ -4,30 +4,46 @@ class Locals::EventsController < ApplicationController
     @events = policy_scope(Event).order(created_at: :desc)
     @events = Event.where.not(latitude: nil, longitude: nil)
 
-    # @event = Event.find(params[:id])
+
 
     @markers = @events.map do |event|
       {
         lat: event.latitude,
         lng: event.longitude,
         # we get each event id through interpolating
-        url: "/locals/events/#{event.id}"
+        url: "/locals/events/#{event.id}",
+        icon: {
+          url: "https://image.flaticon.com/icons/svg/235/235881.svg",
+          scaledSize: {
+            height: 40,
+            width: 40
+          }
+        }
         #infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
       }
     end
 
-    # @users = policy_scope(User).order(created_at: :desc)
-    # @users = User.where.not(latitude: nil, longitude: nil)
+    @users = policy_scope(User).order(created_at: :desc)
+    @users = User.where.not(latitude: nil, longitude: nil)
+    # @event = Event.find(params[:id])
 
-    #     @user_markers = @users.map do |user|
-    #   {
-    #     lat: user.latitude,
-    #     lng: user.longitude,
-    #     url: "/visitors/events/#{@event.id}/users/#{user.id}"
+        @usermarkers = @users.map do |user|
+      {
+        lat: user.latitude,
+        lng: user.longitude,
+        # url: "/visitors/events/#{@event.id}/users/#{user.id}",
+        icon: {
+          url: "https://image.flaticon.com/icons/svg/808/808297.svg",
+          scaledSize: {
+            height: 40,
+            width: 40
+          }
+        }
+        # url: "/visitors/events/#{@event.id}/users/#{user.id}"
 
-    #       # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
-    #     }
-    #   end
+          # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+        }
+      end
 
     #
     end
@@ -40,7 +56,14 @@ class Locals::EventsController < ApplicationController
       [{
         lat: @event.latitude,
         lng: @event.longitude,
-        draggable: false
+        url: "/locals/events/#{@event.id}",
+        icon: {
+          url: "https://image.flaticon.com/icons/svg/235/235881.svg",
+          scaledSize: {
+            height: 40,
+            width: 40
+          }
+        }
         }]
 
 
@@ -73,6 +96,6 @@ class Locals::EventsController < ApplicationController
 
     private
     def event_params
-      params.require(:event).permit([:location_name, :location_address,:event_description, :event_picture, :time, :user])
+      params.require(:event).permit([:id, :location_name, :location_address,:event_description, :event_picture, :time, :user])
     end
   end
