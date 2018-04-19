@@ -11,7 +11,7 @@ data-usermarkers="<%= @usermarkers.to_json %>"
 <div class="container">
 <% @users.each do |user| %>
 <figure class="snip1208">
-  <img src="https://www.top10berlin.de/sites/top10berlin.de/files/location/mainimages/2015/10/08/bar-ansicht_dpa.jpg" alt="sample66"/>
+  <img src=" <%= user.photo %>" alt="sample66"/>
   <div class="date"><span class="day"><%= @event.time.strftime("%H:%M") %></span><span class="month">Today</span></div><i class="ion-beer"></i>
   <figcaption>
     <p><%= link_to user.first_name, locals_event_user_path(@event, user) %></p>
