@@ -1,10 +1,19 @@
-<div class="show-bottom">
-  <h1> <%= @user.first_name %> </h1>
-  <h1> <%= @user.last_name %> </h1>
-  <h2>Age: <%= @user.age %> </h2>
-  <p>About: <%= @user.dedication %></p>
-  <h2> <%= @user.email %> </h2>
-  <p>Type of Music: <%= @user.typeofmusic %></p>
-  <h2>About <%= @user.first_name %>: <%= @user.description %></h2>
-</div>
-<%= link_to "Back to Event", visitors_event_path(id: params[:event_id]), class: "btn-submit-black"  %>
+
+
+
+<figure class="snip1208">
+  <img src=" <%= @user.photo %>" alt="sample66"/>
+  <div class="date"><span class="day"><%= @event.time.strftime("%H:%M") %></span><span class="month">Today</span></div><i class="ion-beer"></i>
+  <figcaption>
+    <h3><%= @user.first_name %></h3>
+    <p><%= @user.last_name %></p>
+    <p>Age: <%= @user.age %></p>
+    <p><%= @user.dedication %></p>
+    <p>Time in Berlin: <%= @user.stay %></p>
+    <p> <%= @user.email %> </p>
+    <p>Type of Music: <%= @user.typeofmusic %></p>
+    <p>About <%= @user.first_name %>: <%= @user.description %></p>
+
+  <button> <%= link_to "Back to Event", visitors_event_path(id: params[:event_id]), class: "btn-submit-black" %></button>
+
+</figure>
