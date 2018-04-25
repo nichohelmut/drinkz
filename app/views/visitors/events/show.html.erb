@@ -17,7 +17,7 @@
     <h3><%= @event.location_name %></h3>
     <p><%= @event.location_address %></p>
     <p><%= @event.event_description %></p>
-    <p>Who is comming: <%= link_to @event.user.first_name, visitors_event_user_path(id: @event.user.id, event_id: @event.id) %></p>
+    <p>Who is comming: <%= link_to @event.user.first_name, visitors_event_user_path(@event.user.id, event_id: @event) %></p>
     <div class="continue-btn">
       <%= link_to "Continue Looking", visitors_events_path %>
     </div>
