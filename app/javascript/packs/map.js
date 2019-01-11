@@ -15,51 +15,51 @@ var mapElement = document.getElementById('map');
 
 
 if (mapElement) { // don't try to build a map if there's no div#map to inject in
-  //create new map
-  const map = new GMaps({ el: '#map', lat: 0, lng: 0 });
-  console.log(map);
-  //get data vom controller(DB) parse it with json so we can access atributes of dataset.markers which is data-markers="<%= @markers.to_json %>"
-  //found @ index
+    //create new map
+    const map = new GMaps({el: '#map', lat: 0, lng: 0});
+    console.log(map);
+    //get data vom controller(DB) parse it with json so we can access attributes of dataset.markers which is data-markers="<%= @markers.to_json %>"
+    //found @ index
 
-  const markers = JSON.parse(mapElement.dataset.markers);
-  console.log(markers);
-  //add markers according to parsed data
+    const markers = JSON.parse(mapElement.dataset.markers);
+    console.log(markers);
+    //add markers according to parsed data
 
-  map.addMarkers(markers);
-      console.log(map);
+    map.addMarkers(markers);
+    console.log(map);
 
 
-  //for each marker in map we add a eventlistener click event
+    //for each marker in map we add a eventlistener click event
 
-  map.markers.forEach(function(marker) {
-    console.log(marker);
-    // map.addMarker({
-    //   lng: marker.lng,
-    //   lat: marker.lat,
-    //   icon: icon
-    // })
-    marker.addListener('click', function() {
-      //standard command to open the url according to the markers url for example: url: "/locals/events/1"
-    window.location.href = marker.url;
-  })
-  });
+    map.markers.forEach(function (marker) {
+        console.log(marker);
+        // map.addMarker({
+        //   lng: marker.lng,
+        //   lat: marker.lat,
+        //   icon: icon
+        // })
+        marker.addListener('click', function () {
+            //standard command to open the url according to the markers url for example: url: "/locals/events/1"
+            window.location.href = marker.url;
+        })
+    });
 
     if (markers.length === 0) {
-    map.setZoom(2);
-  } else if (markers.length === 1) {
-    map.setCenter(markers[0].lat, markers[0].lng);
-    //console.log(map.setZoom(14));
-    map.setZoom(14);
-  } else {
-    map.fitLatLngBounds(markers);
-  }
+        map.setZoom(2);
+    } else if (markers.length === 1) {
+        map.setCenter(markers[0].lat, markers[0].lng);
+        //console.log(map.setZoom(14));
+        map.setZoom(14);
+    } else {
+        map.fitLatLngBounds(markers);
+    }
 
-  console.log(map.markers);
+    console.log(map.markers);
 
 // }
 // if (mapElement) {
 
-   //const map1 = new GMaps({ el: '#map', lat: 0, lng: 0 });
+    //const map1 = new GMaps({ el: '#map', lat: 0, lng: 0 });
 
     // var mapElement = document.getElementById('map');
     const usermarkers = JSON.parse(mapElement.dataset.usermarkers);
@@ -67,28 +67,28 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
     console.log(map);
     console.log(usermarkers);
 
-    map.usermarkers.forEach(function(usermarker) {
-    console.log(usermarker);
-    // map.addusermarker({
-    //   lng: usermarker.lng,
-    //   lat: usermarker.lat,
-    //   icon: icon
-    // })
-    usermarker.addListener('click', function() {
-      //standard command to open the url according to the usermarkers url for example: url: "/locals/events/1"
-    window.location.href = usermarker.url;
-  });
-  });
+    map.usermarkers.forEach(usermarker => {
+        console.log(usermarker);
+        // map.addusermarker({
+        //   lng: usermarker.lng,
+        //   lat: usermarker.lat,
+        //   icon: icon
+        // })
+        usermarker.addListener('click', function () {
+            //standard command to open the url according to the usermarkers url for example: url: "/locals/events/1"
+            window.location.href = usermarker.url;
+        });
+    });
 
     if (usermarkers.length === 0) {
-      map.setZoom(2);
+        map.setZoom(2);
     } else if (usermarkers.length === 1) {
-      map.setCenter(usermarkers[0].lat, usermarkers[0].lng);
-    //console.log(map.setZoom(14));
-    map.setZoom(14 );
-  } else {
-    map.fitLatLngBounds(usermarkers);
-  }
+        map.setCenter(usermarkers[0].lat, usermarkers[0].lng);
+        //console.log(map.setZoom(14));
+        map.setZoom(14);
+    } else {
+        map.fitLatLngBounds(usermarkers);
+    }
 
 }
 // }

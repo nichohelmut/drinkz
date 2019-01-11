@@ -6,7 +6,7 @@ class PagesController < ApplicationController
     @events = Event.where.not(latitude: nil, longitude: nil)
 
     @users = policy_scope(User).order(created_at: :desc)
-   @users = User.where.not(latitude: nil, longitude: nil)
+    @users = User.where.not(latitude: nil, longitude: nil)
 
     @markers = @events.map do |event|
       {
@@ -14,13 +14,14 @@ class PagesController < ApplicationController
         lng: event.longitude,
         url: "/",
         icon: {
-          url: "https://image.flaticon.com/icons/svg/235/235881.svg",
+          url: 'https://image.flaticon.com/icons/svg/235/235881.svg',
           scaledSize: {
             height: 40,
             width: 40
           }
         }
-        # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+        # infoWindow: { content: render_to_string(partial: "/flats/map_box",
+        # locals: { flat: flat }) }
       }
     end
 

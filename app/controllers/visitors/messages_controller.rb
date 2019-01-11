@@ -38,3 +38,4 @@ class Visitors::MessagesController < ApplicationController
       params.require(:message).permit(:title, :body)
     end
 end
+

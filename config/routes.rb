@@ -1,5 +1,6 @@
-Rails.application.routes.draw do
+# frozen_string_literal: true
 
+Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   # resources :users, only: [:new, :create, :show] do
   #   resources :events, only: [:index, :show, :new, :create] do
@@ -10,41 +11,33 @@ Rails.application.routes.draw do
   namespace :locals do
     # end
     resources :requests, only: :show do
-      resources :messages, only: [:index, :new, :create, :show]
+      resources :messages, only: %i[index new create show]
     end
 
     # /requests/345/messages/new
 
-    resources :events, only: [:index, :show, :new, :create, :destroy] do
-      resources :users, only: [:index, :show]
-      resources :requests, only: [:new, :create]
+    resources :events, only: %i[index show new create destroy] do
+      resources :users, only: %i[index show]
+      resources :requests, only: %i[new create]
     end
   end
-
-
 
   namespace :visitors do
     resources :requests, only: :show do
-      resources :messages, only: [:index, :new, :create]
+      resources :messages, only: %i[index new create]
     end
 
     # /requests/345/messages/new
 
-    resources :events, only: [:index, :show, :new, :create] do
-      resources :users, only: [:index, :show]
-      resources :requests, only: [:new, :create]
+    resources :events, only: %i[index show new create] do
+      resources :users, only: %i[index show]
+      resources :requests, only: %i[new create]
     end
-
   end
-  devise_for :users, :controllers => { registrations: 'registrations' }
+  devise_for :users, controllers: { registrations: 'registrations' }
   root to: 'pages#home'
 end
 
-
-  # resources :users
-  # get '/users', to: 'users#index'
-  # get '/users/:id', to: 'users#show', as: "user"
-
-
-
-
+# resources :users
+# get '/users', to: 'users#index'
+# get '/users/:id', to: 'users#show', as: "user"

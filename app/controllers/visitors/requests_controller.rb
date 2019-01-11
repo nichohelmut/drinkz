@@ -9,6 +9,7 @@ class Visitors::RequestsController < ApplicationController
     authorize @request
   end
 
+
   def new
     @request = Request.new
     @event = Event.find(params[:event_id])

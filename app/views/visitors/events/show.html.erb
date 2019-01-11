@@ -3,7 +3,7 @@
   style="width: 100%;
   height: 400px;"
   data-markers="<%= @markers.to_json %>"
-  data-user_markers="<%= @user_markers.to_json %>"
+  data-usermarkers="<%= @usermarkers.to_json %>"
 
 ></div>
 
@@ -11,15 +11,15 @@
 
 <figure class="snip1208">
 <!-- Party Bar Restaurant Park Sport Shopping Sightseeing Homeless Coding -->
-<%= render "locals/events/images" %>
+<%= render 'locals/events/images' %>
   <div class="date"><span class="day"><%= @event.time.strftime("%H:%M") %></span><span class="month">Today</span></div><i class="ion-beer"></i>
   <figcaption>
     <h3><%= @event.location_name %></h3>
     <p><%= @event.location_address %></p>
     <p><%= @event.event_description %></p>
-    <p>Who is comming: <%= link_to @event.user.first_name, visitors_event_user_path(@event.user.id, event_id: @event) %></p>
+    <p>Who is coming: <%= link_to @event.user.first_name, visitors_event_user_path(@event.user.id, event_id: @event) %></p>
     <div class="continue-btn">
-      <%= link_to "Continue Looking", visitors_events_path %>
+      <%= link_to 'Continue Looking', visitors_events_path %>
     </div>
     <% if user_signed_in? %>
   <% if @request %>
@@ -39,7 +39,7 @@
     <% end %>
   <% end %>
 <% else %>
-   <button> <%=  link_to "Sign In to Join the Event", new_user_session_path %></button>
+   <button> <%=  link_to 'Sign In to Join the Event', new_user_session_path %></button>
 <% end %>
 </figure>
 
