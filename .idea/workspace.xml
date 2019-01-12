@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="00e322fc-751f-47ea-916a-c6d67f6a406e" name="Default" comment="commiting stuff after a long time">
-      <change beforePath="$PROJECT_DIR$/.idea/drinkz.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/drinkz.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.ebextensions/01_install_dependencies.config" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -52,13 +49,18 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Gemfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="21" column="15" selection-start-line="21" selection-start-column="15" selection-end-line="21" selection-end-column="15" />
+            <state relative-caret-position="83">
+              <caret line="12" column="36" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.ebextensions/01_install_dependencies.config">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -171,6 +173,11 @@
             <path>
               <item name="drinkz" type="b2602c69:ProjectViewProjectNode" />
               <item name="drinkz" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="drinkz" type="b2602c69:ProjectViewProjectNode" />
+              <item name="drinkz" type="462c0819:PsiDirectoryNode" />
+              <item name=".ebextensions" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="drinkz" type="b2602c69:ProjectViewProjectNode" />
@@ -415,7 +422,7 @@
       <workItem from="1524749255852" duration="849000" />
       <workItem from="1547225322670" duration="1083000" />
       <workItem from="1547289472115" duration="5667000" />
-      <workItem from="1547319337843" duration="2547000" />
+      <workItem from="1547319337843" duration="2904000" />
     </task>
     <task id="LOCAL-00001" summary="commiting stuff after a long time">
       <created>1547225451868</created>
@@ -435,7 +442,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15676000" />
+    <option name="totallyTimeSpent" value="16033000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -861,9 +868,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Gemfile.lock">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$USER_HOME$/.rvm/gems/ruby-2.5.0/gems/bundler-2.0.1/lib/bundler/deployment.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-330" />
@@ -876,12 +880,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Gemfile.lock">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="21" column="15" selection-start-line="21" selection-start-column="15" selection-end-line="21" selection-end-column="15" />
+        <state relative-caret-position="83">
+          <caret line="12" column="36" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.ebextensions/01_install_dependencies.config">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>
