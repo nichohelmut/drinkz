@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="00e322fc-751f-47ea-916a-c6d67f6a406e" name="Default" comment="commiting stuff after a long time">
-      <change afterPath="$PROJECT_DIR$/.ebextensions/01_install_dependencies.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.ebextensions/01_install_dependencies.config" beforeDir="false" afterPath="$PROJECT_DIR$/.ebextensions/01_install_dependencies.config" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -60,7 +60,11 @@
       </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.ebextensions/01_install_dependencies.config">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -75,15 +79,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state>
               <caret column="3" selection-start-column="3" selection-end-column="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="840">
-              <caret line="56" column="38" selection-start-line="56" selection-start-column="38" selection-end-line="56" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -151,6 +146,7 @@
         <option value="$PROJECT_DIR$/.ruby-version" />
         <option value="$PROJECT_DIR$/config/puma.rb" />
         <option value="$PROJECT_DIR$/Gemfile" />
+        <option value="$PROJECT_DIR$/.ebextensions/01_install_dependencies.config" />
       </list>
     </option>
   </component>
@@ -422,7 +418,7 @@
       <workItem from="1524749255852" duration="849000" />
       <workItem from="1547225322670" duration="1083000" />
       <workItem from="1547289472115" duration="5667000" />
-      <workItem from="1547319337843" duration="2904000" />
+      <workItem from="1547319337843" duration="3069000" />
     </task>
     <task id="LOCAL-00001" summary="commiting stuff after a long time">
       <created>1547225451868</created>
@@ -442,7 +438,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16033000" />
+    <option name="totallyTimeSpent" value="16198000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -880,9 +876,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Gemfile.lock">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="83">
@@ -890,8 +883,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.ebextensions/01_install_dependencies.config">
+    <entry file="file://$PROJECT_DIR$/Gemfile.lock">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.ebextensions/01_install_dependencies.config">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>
