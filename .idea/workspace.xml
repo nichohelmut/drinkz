@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="00e322fc-751f-47ea-916a-c6d67f6a406e" name="Default" comment="commiting stuff after a long time">
-      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -67,20 +67,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config/database.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
+            <state relative-caret-position="86">
               <caret line="81" column="21" selection-start-line="81" selection-start-column="21" selection-end-line="81" selection-end-column="21" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Gemfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="9" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
+            <state relative-caret-position="330">
+              <caret line="22" selection-start-line="22" selection-end-line="22" />
             </state>
           </provider>
         </entry>
@@ -164,10 +164,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="509" />
     <option name="y" value="23" />
     <option name="width" value="1260" />
-    <option name="height" value="951" />
+    <option name="height" value="700" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -433,7 +432,7 @@
       <workItem from="1524746070473" duration="1311000" />
       <workItem from="1524748391138" duration="658000" />
       <workItem from="1524749255852" duration="849000" />
-      <workItem from="1547225322670" duration="264000" />
+      <workItem from="1547225322670" duration="1083000" />
     </task>
     <task id="LOCAL-00001" summary="commiting stuff after a long time">
       <created>1547225451868</created>
@@ -446,7 +445,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6643000" />
+    <option name="totallyTimeSpent" value="7462000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -460,8 +459,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="10" y="42" width="1260" height="951" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1260" height="700" extended-state="0" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7375328" visible="true" weight="0.23891626" />
       <window_info id="Structure" order="1" sideWeight="0.2624672" side_tool="true" weight="0.23563218" />
@@ -477,7 +475,7 @@
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Inspection Results" order="9" weight="0.32994923" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.32922536" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="11" visible="true" weight="0.35273573" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="11" visible="true" weight="0.49835527" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50164205" side_tool="true" weight="0.32922536" />
       <window_info anchor="bottom" id="Messages" order="13" weight="0.32994923" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -814,17 +812,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/database.yml">
+    <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="81" column="21" selection-start-line="81" selection-start-column="21" selection-end-line="81" selection-end-column="21" />
+        <state relative-caret-position="330">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Gemfile">
+    <entry file="file://$PROJECT_DIR$/config/database.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="9" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
+        <state relative-caret-position="86">
+          <caret line="81" column="21" selection-start-line="81" selection-start-column="21" selection-end-line="81" selection-end-column="21" />
         </state>
       </provider>
     </entry>
